@@ -21,5 +21,11 @@ public class Member {
     private int  age;
 
     @Column(nullable = false, length = 50)
-    private String MBTI;
+    private String mbti;
+    
+    public Member(String name, int age, String mbti) {
+        this.name = name;
+        this.age = age;
+        this.mbti = mbti;
+    }
 }

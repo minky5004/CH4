@@ -1,15 +1,25 @@
 package com.example.web;
 
 import com.example.domain.service.MemberService;
+import com.example.web.dto.MemberResponse;
+import com.example.web.dto.MemberSaveRequest;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
+@RequestMapping("/api/members")
 public class MemberController {
 
-    private MemberService memberService;
+    private final MemberService memberService;
 
-    @GetMapping()
+    @PostMapping
+    public Long saveMember(@RequestBody MemberSaveRequest request) {
+        return memberService.save(request);
+    }
+
+    @GetMapping("/{id}")
+    public MemberResponse getMember(@PathVariable Long id) {
+        return memberService.findById(id);
+    }
 }
