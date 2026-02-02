@@ -4,9 +4,11 @@ import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Getter
+@Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Member {
 
@@ -22,6 +24,8 @@ public class Member {
 
     @Column(nullable = false, length = 50)
     private String mbti;
+
+    private String profileImageUrl;
     
     public Member(String name, int age, String mbti) {
         this.name = name;
