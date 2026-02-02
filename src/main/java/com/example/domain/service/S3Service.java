@@ -20,7 +20,7 @@ public class S3Service {
     private final S3Template s3Template;
     private final MemberRepository memberRepository; // MemberService 대신 직접 주입
 
-    @Value("${spring.cloud.aws.s3.bucket}")
+    @Value("${s3-bucket}")
     private String bucket;
 
     private static final Duration SIGNED_URL_DURATION = Duration.ofDays(7);
