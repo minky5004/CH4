@@ -18,7 +18,7 @@ import java.util.UUID;
 public class S3Service {
 
     private final S3Template s3Template;
-    private final MemberRepository memberRepository; // MemberService 대신 직접 주입
+    private final MemberRepository memberRepository;
 
     @Value("${s3-bucket}")
     private String bucket;
